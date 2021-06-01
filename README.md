@@ -2,15 +2,15 @@
 
 This report is about the matrix multiplication methods in Computers and their differences. At the end of the report, there are compares of these methods from a time aspect. This report is divided into 3 parts:
 
-- Matrix Multiplication with traditional serial method
-  - for matrix size: 128, 256, 512, 1024, 2048, and 4096
-- Multithreaded Matrix Multiplication
+-   [Matrix Multiplication with **traditional serial method**](#1-matrix-multiplication-with-traditional-serial-method)
+    - for matrix size: 128, 256, 512, 1024, 2048, and 4096
+- [**Multithreaded** Matrix Multiplication](#2-multithreaded-matrix-multiplication)
   - for thread size: 1, 2, 4, 8, and 16
   - for matrix size: 128, 256, 512, 1024, 2048, and 4096
-- Cache Friendly Multithreaded Matrix Multiplication
+- [**Cache Friendly Multithreaded** Matrix Multiplication](#3-cache-friendly-multithreaded-matrix-multiplication)
   - for thread size: 1, 2, 4, 8, and 16
   - for matrix size: 128, 256, 512, 1024, 2048, and 4096
-- BONUS: How to run these codes?
+- [**BONUS**: How to run these codes?](#bonus-how-to-run-these-codes-these-instructions-are-for-ubuntu-os)
 
 </br>
 
@@ -80,9 +80,7 @@ When the program will run, results will be like this:
 
 ---
 
-</br>
-
-In the traditional serial method, the multiplication of 4096 x 4096 matrices, takes 610 seconds (10 minutes). But with using 16 threads and a cache friendly algorithm, it decreases to 30 seconds (0.5 minutes). It is almost 20 times faster than the traditional one. Then, we can say that the most important point in multiplication is how the developer wrote it. The results are identically same but efficient one uses the resources in a better way. That made the multiplication time nearly 20 times faster. Let`s see the whole statistics in tables, that helps us to see more clearly.
+> In the traditional serial method, the multiplication of 4096 x 4096 matrices, takes 610 seconds (10 minutes). But with using 16 threads and a cache friendly algorithm, it decreases to 30 seconds (0.5 minutes). It is almost 20 times faster than the traditional one. Then, we can say that the most important point in multiplication is how the developer wrote it. The results are identically same but efficient one uses the resources in a better way. That made the multiplication time nearly 20 times faster. Let`s see the whole statistics in tables, that helps us to see more clearly.
 
 The first one will be multiplication time comparison. There are 3 methods mentioned above and will start with traditional method, here is the results:
 
