@@ -80,7 +80,9 @@ When the program will run, results will be like this:
 
 ---
 
-    In the traditional serial method, the multiplication of 4096 x 4096 matrices, takes 610 seconds (10 minutes). But with using 16 threads and a cache friendly algorithm, it decreases to 30 seconds (0.5 minutes). It is almost 20 times faster than the traditional one. Then, we can say that the most important point in multiplication is how the developer wrote it. The results are identically same but efficient one uses the resources in a better way. That made the multiplication time nearly 20 times faster. Let`s see the whole statistics in tables, that helps us to see more clearly.
+</br>
+
+In the traditional serial method, the multiplication of 4096 x 4096 matrices, takes 610 seconds (10 minutes). But with using 16 threads and a cache friendly algorithm, it decreases to 30 seconds (0.5 minutes). It is almost 20 times faster than the traditional one. Then, we can say that the most important point in multiplication is how the developer wrote it. The results are identically same but efficient one uses the resources in a better way. That made the multiplication time nearly 20 times faster. Let`s see the whole statistics in tables, that helps us to see more clearly.
 
 The first one will be multiplication time comparison. There are 3 methods mentioned above and will start with traditional method, here is the results:
 
@@ -171,8 +173,8 @@ Let’s see the whole operation time (load files + multiplication + create/write
 
 ---
 
-    These operations calculated on the SSD with using: </br>
-    CPU: Intel(R) Core(TM) i7-9700K CPU 3.60GHz </br>
+    These operations calculated on the SSD with using:
+    CPU: Intel(R) Core(TM) i7-9700K CPU 3.60GHz
     RAM: 16.0 GB
 
 ---
