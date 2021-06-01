@@ -1,9 +1,9 @@
 # Parallel Dense Matrix Multiplication
 
-This report is about the matrix multiplication methods in Computers and their differences. At the end of the report, there are compares of these methods from a time aspect. This report is divided into 3 parts:
+This report is about the matrix multiplication methods and their differences. At the end of the report, there are compares of these methods from a time aspect. This report is divided into 3 parts:
 
--   [Matrix Multiplication with **traditional serial method**](#1-matrix-multiplication-with-traditional-serial-method)
-    - for matrix size: 128, 256, 512, 1024, 2048, and 4096
+- [Matrix Multiplication with **traditional serial method**](#1-matrix-multiplication-with-traditional-serial-method)
+  - for matrix size: 128, 256, 512, 1024, 2048, and 4096
 - [**Multithreaded** Matrix Multiplication](#2-multithreaded-matrix-multiplication)
   - for thread size: 1, 2, 4, 8, and 16
   - for matrix size: 128, 256, 512, 1024, 2048, and 4096
@@ -14,13 +14,13 @@ This report is about the matrix multiplication methods in Computers and their di
 
 </br>
 
-Before all parts, let’s start with the simple program that generates matrix files for us. write_file.c is a C program that creates a folder called data if it doesn’t exist and fill this folder with .txt files which represent 2 different random generated matrices. These matrices have 128, 256, 512, 1024, 2048, and 4096 versions. The numbers in them, are randomly selected between 0-10. When this program runs, results will be like this:
+Before all parts, let’s start with the simple program that generates matrix files for us. **_write_file.c_** is a C program that creates a folder called data if it doesn’t exist and fill this folder with .txt files which represent 2 different random generated matrices. These matrices have **_128, 256, 512, 1024, 2048, and 4096 versions_**. The numbers in them, are randomly selected between 0-10. When this program runs, results will be like this:
 
 <p align="center">
   <img height="200px" src="assets/write-1.png">
 </p>
 
-Now, our different version matrices are ready. It is time to start Matrix Multiplication methods. All methods generate .txt files that represent multiplication results. At the end of the file, there is time information about them(total time of multiplication, writing to file and etc). Let`s start with the Traditional Serial Matrix Multiplication method.
+Now, our different version matrices are ready. It is time to start Matrix Multiplication methods. All methods generate **_.txt_** files that represent multiplication results. At the end of the file, there is time information about them(total time of multiplication, writing to file and etc). Let`s start with the Traditional Serial Matrix Multiplication method.
 
 ---
 
@@ -42,7 +42,7 @@ The program takes the matrices in all sizes and calculates multiplications of th
 
 ## 2. Multithreaded Matrix Multiplication
 
-In this method, the program will still use the traditional multiplication method but in extra, it will use the threads to operate multiplications at the same time on multiple threads which is called Multithreaded operation. In this section, the program will run the same .txt files for 1, 2, 4, 8, and 16 threads. When the program will run, results will be like this:
+In this method, the program will still use the traditional multiplication method but in extra, it will use the threads to operate multiplications at the same time on multiple threads which is called Multithreaded operation. In this section, the program will run the same **_.txt_** files for **_1, 2, 4, 8, and 16 threads_**. When the program will run, results will be like this:
 
 <p align="center">
   <img height="450px" src="assets/parallel-3.png">
@@ -54,19 +54,19 @@ In this method, the program will still use the traditional multiplication method
 
 This method is not using the traditional serial method. Cache Friendly Multithreaded Matrix Multiplication method is more complicated for humans but more efficient for computers.
 
-C is a row-major language. That means it reaches out the data in row order. If a program needs the whole data in one column, it has to reach all row data(include useless ones) and take the data from it. Then the program will do a lot of cache miss because it can not store whole data in cache. It needs to go to memory to get specific data. The developer has to decrease the cache miss ratio to increase the performance of the program.
+**_C is a row-major language_**. That means it reaches out the data in row order. If a program needs the whole data in one column, it has to reach all row data(include useless ones) and take the data from it. Then the program will do a lot of cache miss because it can not store whole data in cache. It needs to go to memory to get specific data. The developer has to decrease the cache miss ratio to increase the performance of the program.
 
 <p align="center">
   <img height="200px" src="assets/general-1.png">
 </p>
 
-For these matrices, for accessing row data, cache miss almost decreases to 25%. But in column accesses cache miss is near to 100%. That means it gets the specific data always from the main memory instead of the cache. When we compare, it takes more time than normal cache access. In this method, there is not any column access. With the power of multithreaded operation, the program becomes almost the fastest version of itself.
+For these matrices, for accessing row data, cache miss almost decreases to **_25%_**. But in column accesses cache miss is near to **_100%_**. That means it gets the specific data always from the main memory instead of the cache. When we compare, it takes more time than normal cache access. In this method, there is not any column access. With the power of multithreaded operation, the program becomes almost the fastest version of itself.
 
 <p align="center">
   <img height="200px" src="assets/general-5.png">
 </p>
 
-As mentioned above, accessing specific data from the cache is efficient than accessing it from the main memory or RAM.
+As mentioned above, accessing specific data from the **_cache_** is efficient than accessing it from the **_main memory or RAM_**.
 
 <p align="center">
   <img height="200px" src="assets/general-2.png">
@@ -85,13 +85,13 @@ When the program will run, results will be like this:
 The first one will be multiplication time comparison. There are 3 methods mentioned above and will start with traditional method, here is the results:
 
 | Matrix sizes | Traditinal serial method (Multiplication time) |
-| :----------- | ---------------------------------------------: |
-| 128 x 128    |                                  0.008 seconds |
-| 256 x 256    |                                  0.059 seconds |
-| 512 x 512    |                                  0.479 seconds |
-| 1024 x 1024  |                                  5.084 seconds |
-| 2048 x 2048  |                                  63.21 seconds |
-| 4096 x 4096  |                                 610.01 seconds |
+| :----------: | :--------------------------------------------: |
+|  128 x 128   |                 0.008 seconds                  |
+|  256 x 256   |                 0.059 seconds                  |
+|  512 x 512   |                 0.479 seconds                  |
+| 1024 x 1024  |                 5.084 seconds                  |
+| 2048 x 2048  |                 63.21 seconds                  |
+| 4096 x 4096  |                 610.01 seconds                 |
 
 ---
 
@@ -134,7 +134,7 @@ The first one will be multiplication time comparison. There are 3 methods mentio
 
 </br>
 
-Let’s see the whole operation time (load files + multiplication + create/write files)
+Let’s see the whole operation time (**_load files + multiplication + create/write files_**)
 
 | Matrix sizes - thread size | Parallel(Total operation time) | Cache friendly parallel(Total operation time) |
 | :------------------------: | :----------------------------: | :-------------------------------------------: |
@@ -177,7 +177,7 @@ Let’s see the whole operation time (load files + multiplication + create/write
 
 ---
 
-### BONUS: How to run these codes? (These instructions are for Ubuntu OS)
+### BONUS: How to run these codes? (These instructions are for **_Ubuntu OS_**)
 
 - Creating matrix files
 
@@ -186,7 +186,7 @@ gcc -o cr_file cr_file.c
 ./cr_file
 ```
 
-Now, files are created in the /data folder.
+Now, files are created in the **_/data_** folder.
 
 - Run method 1: Traditional matrix multiplication
 
@@ -208,3 +208,11 @@ gcc -o thread_m thread_m.c -lpthread
 gcc -o thread_c_m thread_c_m.c -lpthread
 ./thread_c_m.c
 ```
+
+---
+
+<h3 align="center">
+    THANKS FOR READING
+</h3>
+
+---
