@@ -192,21 +192,21 @@ Now, files are created in the **_/data_** folder.
 
 ```bash
 gcc -o trad_m trad_m.c
-./trad_m.c
+./trad_m
 ```
 
 - Run Method 2: Multithreaded Matrix Multiplication
 
 ```bash
 gcc -o thread_m thread_m.c -lpthread
-./thread_m.c
+./thread_m
 ```
 
 - Run Method 3: Cache Friendly Multithreaded Matrix Multiplication
 
 ```bash
 gcc -o thread_c_m thread_c_m.c -lpthread
-./thread_c_m.c
+./thread_c_m
 ```
 
 ---
